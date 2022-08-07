@@ -91,7 +91,7 @@ func main() {
 	}
 
 	// Bob MUST be created with the shared secret and a DH key pair.
-	bob, err := doubleratchet.NewHE([]byte("bob-session-id"), sk, ak_a, sk_b, keyPair, nil)
+	bob, err := doubleratchet.NewHE([]byte("bob-session-id"), sk, sk_a, sk_b, keyPair, nil)
 	if err != nil {
 		log.Fatal(err)
 	}
