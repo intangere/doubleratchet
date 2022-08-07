@@ -44,7 +44,7 @@ of them could message each other from the very beginning.
 
 ## Installation
 
-    go get github.com/status-im/doubleratchet
+    go get github.com/intangere/doubleratchet
 
 ## Usage
 
@@ -141,6 +141,13 @@ doubleratchet.New(
     WithMaxKeep(90),
 )
 ```
+
+### Notes
+Original implementation without header enc can be found here: [Status Github](https://github.com/status-im/doubleratchet)
+Another implementation with header encryption I found after writing this: [Tiabc Github](https://github.com/tiabc/doubleratchet/) 
+All 3 of these versions closely follow Signal's reference implementatino of the Double Ratchet algorithm. 
+The only differences in this version compared to Tiabc is the key type is not restricted to 32 bytes, skipped message keys 
+are truncated by oldest keys once MaxKeep condition is met, and hex key representation internally for skipped message keys.
 
 ## License
 
